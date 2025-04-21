@@ -5,6 +5,7 @@
  service Calculator {
   rpc Add(CalculationRequest) returns (CalculationResponse);
   rpc Sub(CalculationRequest) returns (CalculationResponse);
+  rpc Mult(CalculationRequest) returns (CalculationResponse);
   rpc Div(CalculationRequest) returns (CalculationResponse);
 }
 

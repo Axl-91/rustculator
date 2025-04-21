@@ -11,11 +11,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let mut client = CalculatorClient::connect(url).await?;
 
     // This is were we set up the values of our variables
-    let req = proto::CalculationRequest { a: 4, b: 5 };
-    let request = tonic::Request::new(req);
+    let request = tonic::Request::new(proto::CalculationRequest { a: 4, b: 5 });
 
     // This is were we choose what function to use
-    let response = client.add(request).await?;
+    let response = client.mult(request).await?;
 
     println!("Response: {:?}", response.get_ref().result);
 
